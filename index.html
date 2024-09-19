@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games</title>
+    <title>Popup Example</title>
     <style>
         body {
             display: flex;
@@ -29,29 +29,19 @@
         button:hover {
             background-color: #0056b3;
         }
-
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
     </style>
     <script>
-        function openWebsiteInBlank() {
-            const websiteURL = 'https://e-web.pages.dev'; // Website to load
-            const newWindow = window.open('about:blank', '_blank');
-
-            if (newWindow) {
-                newWindow.location.href = websiteURL;
-            } else {
+        function openPopup() {
+            const url = 'https://e-web.pages.dev'; // The URL to open
+            const popupWindow = window.open(url, 'popupWindow', 'width=800,height=600');
+            
+            if (!popupWindow) {
                 alert('Popup blocked. Please allow popups for this site.');
             }
         }
     </script>
 </head>
 <body>
-    <div>
-        <h1>Open the Game Website</h1>
-        <button onclick="openWebsiteInBlank()">Open Website in about:blank</button>
-    </div>
+    <button onclick="openPopup()">Open Website in Popup</button>
 </body>
 </html>
