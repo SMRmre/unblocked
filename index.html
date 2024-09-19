@@ -7,20 +7,30 @@
     <script>
         function openWebsiteInBlank() {
             // Create a new about:blank page
-            const newWindow = window.open('about:blank', '_blank');
+            const newWindow = window.open('', '_blank', 'width=800,height=600');
 
-            // Write the website content into the new page
+            // Ensure the new window is successfully opened
             if (newWindow) {
-                const websiteURL = 'https://e-web.pages.dev'; // Change this URL to the site you want to load
+                const websiteURL = 'https://e-web.pages.dev'; // URL to the site you want to load
+
+                // Write the iframe into the new page
                 newWindow.document.write(`
                     <html>
-                    <head><title>Games</title></head>
+                    <head>
+                        <title>Games</title>
+                        <style>
+                            body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+                            iframe { width: 100%; height: 100%; border: none; }
+                        </style>
+                    </head>
                     <body>
-                        <iframe src="${websiteURL}" style="width:100%; height:100vh; border:none;"></iframe>
+                        <iframe src="${websiteURL}"></iframe>
                     </body>
                     </html>
                 `);
                 newWindow.document.close();
+            } else {
+                alert('Popup blocked. Please allow popups for this site.');
             }
         }
     </script>
