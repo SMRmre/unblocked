@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
     <script>
         function openWebsiteInBlank() {
-            // Create a new about:blank page
             const newWindow = window.open('', '_blank', 'width=800,height=600');
 
-            // Ensure the new window is successfully opened
             if (newWindow) {
-                const websiteURL = 'https://e-web.pages.dev'; // URL to the site you want to load
+                const websiteURL = 'https://e-web.pages.dev'; // Website to load
 
-                // Write the iframe into the new page
                 newWindow.document.write(`
                     <html>
                     <head>
@@ -36,6 +64,9 @@
     </script>
 </head>
 <body>
-    <button onclick="openWebsiteInBlank()">Open Website in about:blank</button>
+    <div>
+        <h1>Open the Game Website</h1>
+        <button onclick="openWebsiteInBlank()">Open Website in about:blank</button>
+    </div>
 </body>
 </html>
